@@ -35,7 +35,7 @@ def app(videoPath):
 
     vehicle_crossing=[]
     vid = cv2.VideoCapture(videoPath)
-    model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+    model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True,force_reload=True)
     while True:
         ret, frame = vid.read()
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
